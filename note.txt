@@ -1,0 +1,7 @@
+M V C -> Model View Controller 
+
+MODEL -> title, content, author, image, datetime 
+
+VIEW -> Template, index.html 
+
+views.py -> model က လာတဲ့ data တွေနဲ့ View နဲ့ လာပေါင်းပေးတာ 
