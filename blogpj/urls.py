@@ -16,8 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include 
+from rest_framework import routers
+
+from blog import views
+
+router = routers.DefaultRouter()
+router.register(r'posts', views.PostViewSet)
+
 
 urlpatterns = [
+    # path('grappelli/', include('grappelli.urls')), # grappelli URLS
+    path('admin/', include("django_admin_kubi.urls")),  # Django admin kubi URLS
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
